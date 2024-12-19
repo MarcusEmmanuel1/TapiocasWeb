@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapiocas - Sistema de Vendas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, p {
+            margin-bottom: 10px;
+        }
+        input, button {
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+        }
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Sistema de Vendas - Tapiocas</h1>
+
+    <!-- Input CPF -->
+    <label for="cpfInput">CPF do Comprador:</label>
+    <input type="text" id="cpfInput" placeholder="Digite o CPF" />
+
+    <!-- Escolha de comida -->
+    <label>Escolha a comida:</label>
+    <input type="radio" name="food" value="1" /> Tapioca (R$8.50) <br />
+    <input type="radio" name="food" value="2" /> Cuscuz (R$7.00) <br />
+    <input type="radio" name="food" value="3" /> Sanduíche (R$10.00) <br />
+
+    <!-- Escolha de recheios -->
+    <label>Escolha os recheios:</label>
+    <input type="checkbox" class="filing" data-price="2.50" /> Queijo (R$2.50) <br />
+    <input type="checkbox" class="filing" data-price="3.00" /> Presunto (R$3.00) <br />
+    <input type="checkbox" class="filing" data-price="4.00" /> Carne (R$4.00) <br />
+
+    <!-- Preço total -->
+    <p>Total: R$<span id="totalPrice">0.00</span></p>
+
+    <!-- Input descrição -->
+    <label for="descriptionInput">Descrição do Pedido:</label>
+    <input type="text" id="descriptionInput" placeholder="Detalhes do pedido" />
+
+    <!-- Botões -->
+    <button id="payButton">Pagar</button>
+    <button id="historyButton">Ver Histórico de Compras</button>
+</div>
+<div id="historyContainer" style="display:none;">
+    <h2>Histórico de Compras</h2>
+    <table id="historyTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Comida</th>
+            <th>Valor</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody id="historyBody">
+        <!-- Histórico de compras será preenchido aqui -->
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
